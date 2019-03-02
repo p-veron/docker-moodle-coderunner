@@ -1,17 +1,14 @@
-FROM ubuntu:14.04
-MAINTAINER Sergio Gómez <sergio@quaip.com>
+FROM ubuntu:16.04
+MAINTAINER Pascal Véron <veron@univ-tln.fr>
 
-# Keep upstart from complaining
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 
-# Let the conatiner know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 RUN apt-get -y upgrade
  
-# Basic Requirements
 RUN apt-get -y install mysql-server mysql-client pwgen python-setuptools curl git unzip
 
 # Moodle Requirements
@@ -31,7 +28,11 @@ ADD ./supervisord.conf /etc/supervisord.conf
 
 ADD https://download.moodle.org/moodle/moodle-latest.tgz /var/www/moodle-latest.tgz
 RUN cd /var/www; tar zxvf moodle-latest.tgz; mv /var/www/moodle /var/www/html
+RUN cd /var/www/html/moodle
+RUN git clone git://github.com/trampgeek/moodle-qtype_coderunner.git question/type/coderunner
+RUN git clone git://github.com/trampgeek/moodle-qbehaviour_adaptive_adapted_for_coderunner.git question/behaviour/adaptive_adapted_for_coderunner
 RUN chown -R www-data:www-data /var/www/html/moodle
+
 RUN mkdir /var/moodledata
 RUN chown -R www-data:www-data /var/moodledata; chmod 777 /var/moodledata
 RUN chmod 755 /start.sh /etc/apache2/foreground.sh
