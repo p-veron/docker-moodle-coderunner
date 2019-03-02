@@ -1,5 +1,5 @@
-docker-moodle
-=============
+docker-moodle-coderunner
+========================
 
 A Dockerfile that installs the latest Moodle, Apache, PHP, MySQL and SSH
 
