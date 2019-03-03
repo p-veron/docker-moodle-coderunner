@@ -1,7 +1,7 @@
 docker-moodle-coderunner
 ========================
 
-A Dockerfile that installs the latest Moodle, Apache, PHP, MySQL and SSH
+Dockerfile pour Moodle avec Apache, PHP, MySQL, SSH et CodeRunner
 
 ## Installation
 
