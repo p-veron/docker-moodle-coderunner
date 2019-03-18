@@ -1,7 +1,7 @@
 docker-moodle-coderunner
 ========================
 
-Dockerfile pour Moodle avec Apache, PHP, MySQL, SSH et CodeRunner
+Dockerfile pour Moodle avec Apache, PHP, MySQL, SSH et le plugin CodeRunner
 
 ## Installation
 
