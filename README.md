@@ -12,7 +12,7 @@ git clone https://github.com/p-veron/docker-moodle-coderunner.git
 cd docker-moodle-coderunner
 docker build -t moodle-coderunner .
 ```
-Ceci créé une image docker nommé *moodle-coderunner*. Saisissez alors :
+Ceci créé une image docker nommée *moodle-coderunner*. Saisissez alors :
 
 ```
 docker run -ti --rm --name moodle -vmyvolumesql:/var/lib/mysql -vmyvolumemoodle:/var/moodledata -eVIRTUAL_HOST=localhost -p 80:80 -p 22:22 moodle-coderunner
