@@ -20,11 +20,25 @@ Ceci créé une image docker nommé *moodle-coderunner*.
 ```
 docker run -ti --rm --name moodle -vmyvolumesql:/var/lib/mysql -vmyvolumemmodle:/var/moodledata -eVIRTUAL_HOST=localhost -p 80:80 -p 22:22 moodle-coderunner
 ```
+Ceci créé 2 volumes *myvolumesql* et *myvolumemoodle* dans lesquels seront sauvegardés toutes les modifications apportés à Moodle. Ainsi lorsque le conteneur sera à nouveau exécuté, ces modifications ne seront pas perdues.
 
-You can visit the following URL in a browser to get started:
+Une fois la commande *docker* exécutée, vous obtenez un shell administrateur à partir duquel vous devez exécuter la commande *start.sh*
 
 ```
-http://moodle.domain.com/moodle
+root@9f8847b81e0a:/# ./start.sh
 ```
 
-Thanks to [eugeneware](https://github.com/eugeneware) and [ricardoamaro](https://github.com/ricardoamaro) for their Dockerfiles.
+Ceci lance le serveurs Apache, MySQL et SSH. Il ne vous reste plus qu'à vous connecter à 
+
+```
+http://localhost/moodle
+```
+afin de lancer le script de configuration de Moodle.
+
+Une fois votre travail terminé, avant de quitter le conteneur, lancez la commande :
+
+```
+root@9f8847b81e0a:/# /stop.sh
+```
+
+afin de stopper proprement les serveurs.
