@@ -4,11 +4,13 @@ Conteneur docker pour Moodle et CodeRunner
 Le conteneur prêt à l'emploi se trouve sur le site **dockerhub**. Il propose un sereur Moodle préconfiguré avec un cours contenant un questionnaire de type CodeRunner. Ce questionnaire est accessible en se connectant avec les identifiants suivants :
 
 *login : testeur*
+
 *password: ;Testeur1;*
 
 Les identifiants de connexion pour l'administration du serveur Moodle sont :
 
 *login: admin*
+
 *password: ;M00dle;*
 
 
