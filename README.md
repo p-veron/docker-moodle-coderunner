@@ -37,8 +37,7 @@ Une fois la configuration de Moodle terminée, avant de quitter le conteneur, ou
 ```
 docker commit -m "Moodle fin configuration" moodle moodle-coderunner-final
 ```
-
-Retournez alors dans le conteneur en cours d'exécution et saisissez :
+afin de sauvegarder la création du fichier *config.php* nécessaire à Moodle. Retournez alors dans le conteneur en cours d'exécution et saisissez :
 
 ```
 root@9f8847b81e0a:/# /stop.sh
