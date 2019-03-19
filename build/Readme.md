@@ -3,13 +3,13 @@ Conteneur docker pour Moodle et CodeRunner
 
 Le conteneur prêt à l'emploi se trouve sur le site **dockerhub**. Il propose un sereur Moodle préconfiguré avec un cours contenant un questionnaire de type CodeRunner. Ce questionnaire est accessible en se connectant avec les identifiants suivants :
 
-*login : testeur
-password: ;Testeur1;*
+*login : testeur*
+*password: ;Testeur1;*
 
 Les identifiants de connexion pour l'administration du serveur Moodle sont :
 
-*login: admin
-password: ;M00dle;*
+*login: admin*
+*password: ;M00dle;*
 
 
 ## Installation 
@@ -18,7 +18,7 @@ Il faut tout d'abord récupérer l'image du conteneur sur le site **dockerhub**
 ```
 docker pull pveron/moodle-coderunner
 ```
-La pré-configuration du site a été sauvegardée dans des volumes docker qui ont été sauvegardés dans une archive au format *tar*. Ce sont les fichiers **mysql.tar** et **moodle.tar**
+La pré-configuration du site a été sauvegardée dans des volumes docker qui ont été exportés dans une archive au format *tar*. Ce sont les fichiers **mysql.tar.gz** et **moodle.tar.gz**
 
 
 ## Utilisation
