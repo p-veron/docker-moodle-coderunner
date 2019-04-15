@@ -20,7 +20,13 @@ Il faut tout d'abord récupérer l'image du conteneur sur le site **dockerhub** 
 ```
 docker pull pveron/moodle-coderunner
 ```
-La pré-configuration du site a été sauvegardée dans des volumes docker qui ont été exportés dans une archive au format *tar*. Ce sont les fichiers **mysql.tar.gz** et **moodle.tar.gz**. Une fois ces 2 fichiers téléchargés, exécutez:
+La pré-configuration du site a été sauvegardée dans des volumes docker qui ont été exportés dans une archive au format *tar*. Ce sont les fichiers **mysql.tar.gz** et **moodle.tar.gz**. 
+
+**sha256sum mysql.tar.gz :** *6d899e0d1f4dfeb4920d3c291736a1d29ef6009ba72cf696e8bca65f9e73a82f*
+
+**sha256sum moodle.tar.gz :** *5a47b7a521c561501712e62ecc362d3587ffb3612423b2275c3d551743f44f74*
+
+Une fois ces 2 fichiers téléchargés, exécutez:
 ```
 docker run -ti --rm -vmyvolsql:/var/lib/mysql -vmyvolmoodle:/var/moodledata --name moodle pveron/moodle-coderunner
 ```
